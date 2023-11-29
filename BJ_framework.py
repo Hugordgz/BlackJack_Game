@@ -4,7 +4,8 @@ import random
 
 class Card:
     def __init__(self, suit: str, value: int):
-        # TODO: Initialize the attributes
+        self.suit = suit
+        self.value = value        
         pass
 
     def get_numeric_value(self) -> int:
@@ -23,7 +24,7 @@ class Deck:
         pass
 
     def shuffle(self):
-        # TODO: Shuffle the cards
+        random.shuffle(self.cards)
         pass
 
     def deal(self)-> Card:
@@ -32,7 +33,9 @@ class Deck:
 
 class EnglishDeck(Deck):
     def __init__(self):
-        # TODO: Create a standard deck of 52 cards and shuffle them
+        suits = ['hearts', 'diamonds', 'clubs', 'spades']
+        values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+        super().__init__(suits, values)
         pass
 
 class Hand:
